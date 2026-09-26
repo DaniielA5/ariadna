@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ariadna — demo de guía paso a paso</title>
+
+  <link rel="stylesheet" href="css/componente.css">
+
+
+</head>
+
+<body>
+  <header id="encabezado">
+    <h1>Ariadna</h1>
+    <p>Guías paso a paso para cualquier página</p>
+    <button type="button" id="btnGuiaPagina" class="boton boton--claro">Recorrer la página</button>
+  </header>
+
+  <main>
+    <form id="formRegistro" class="caja">
+      <h2 id="tituloForm">Registro de usuario</h2>
+      <p class="ayuda">¿No sabes cómo llenarlo?</p>
+      <button type="button" id="btnGuiaForm" class="boton boton--verde">Guíame por el formulario</button>
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="José Pérez">
+
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" placeholder="correo@ejemplo.com">
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" placeholder="9511234567">
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password">
+
+      <button type="submit" id="btnRegistrar" class="boton boton--verde">Registrarme</button>
+      <p id="mensaje"></p>
+    </form>
+  </main>
+
+  <footer id="pie">
+    Daniel Alexis Juárez Ramírez · Programación Web · Instituto Tecnológico de Oaxaca
+  </footer>
+
+  <script src="js/componente.js"></script>
+
+  <script>
+    const guiaFormulario = new Ariadna({
+      pasos: [
+        { selector: '#tituloForm', titulo: 'Registro de usuario', texto: 'Vamos a llenar este formulario campo por campo.' },
+        { selector: '#nombre', titulo: 'Nombre', texto: 'Escribe tu nombre completo, solo con letras.' },
+        { selector: '#correo', titulo: 'Correo electrónico', texto: 'Usa un correo válido, por ejemplo usuario@gmail.com.' },
+        { selector: '#telefono', titulo: 'Teléfono', texto: 'Solo números, 10 dígitos y sin espacios.' },
+        { selector: '#password', titulo: 'Contraseña', texto: 'Mínimo 8 caracteres con mayúscula, número y símbolo.' },
+        { selector: '#btnRegistrar', titulo: 'Registrarme', texto: 'Cuando termines, pulsa este botón.', posicion: 'arriba' }
+      ],
+      onPaso: function (estado) {
+        console.log('Paso ' + estado.paso + ' de ' + estado.total + ' → ' + estado.titulo);
+      },
+      onFin: function (completo) {
+        console.log(completo ? 'Guía terminada' : 'Guía cerrada antes de terminar');
+        if (completo) document.getElementById('nombre').focus();
+      }
+    });
+
+    const guiaPagina = new Ariadna({
+      color: '#7a4e2d',          
+      mostrarProgreso: false,
+      padding: 10,
+      textos: { siguiente: 'Continuar', anterior: 'Atrás', saltar: 'Cerrar', finalizar: 'Entendido' },
+      pasos: [
+        { selector: '#encabezado', titulo: 'Encabezado', texto: 'Aquí está el nombre del sitio y el acceso a esta guía.' },
+        { selector: '#formRegistro', titulo: 'Formulario', texto: 'Aquí se registran los usuarios nuevos.' },
+        { selector: '#pie', titulo: 'Pie de página', texto: 'Aquí van los datos del autor.', posicion: 'arriba' }
+      ],
+      onPaso: function (estado) {
+        console.log('Guía de la página → ' + estado.titulo);
+      }
+    });
+
+    document.getElementById('btnGuiaForm').addEventListener('click', function () {
+      guiaFormulario.iniciar();
+    });
+    document.getElementById('btnGuiaPagina').addEventListener('click', function () {
+      guiaPagina.iniciar();
+    });
+
+    document.getElementById('formRegistro').addEventListener('submit', function (evento) {
+      evento.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      document.getElementById('mensaje').textContent = '¡Gracias, ' + (nombre || 'usuario') + '! (demo: no se envió nada)';
+    });
+  </script>
+</body>
+</html>
