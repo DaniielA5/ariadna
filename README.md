@@ -10,7 +10,9 @@ El mismo componente se puede usar varias veces en una misma página, con distint
 
 ## Demo en vivo
 
- **[Ver Ariadna funcionando](https://daniiela5.github.io/ariadna/)**
+ **Pages**[Ver Ariadna funcionando](https://daniiela5.github.io/ariadna/)
+
+**Video:**[Ver demo en YouTube]()
 
 ---
 
@@ -128,8 +130,9 @@ guiaPagina.iniciar();
 
 ## Capturas de pantalla
 
-
-
+![Guía del formulario, paso "Nombre"](img/paso-nombre.png)
+![Guía de la página, con el color café](img/guia-pagina.png)
+![Consola mostrando onPaso y estado()](img/consola.png)
 ---
 
 ## Video de demostración
@@ -159,3 +162,4 @@ ariadna/
 
 Daniel Juárez — Ingeniería en Sistemas Computacionales, Instituto Tecnológico de Oaxaca.
 Actividad de Programación Web.
+Daniel Juarez — <https://github.com/DaniielA5>
