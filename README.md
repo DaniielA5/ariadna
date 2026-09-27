@@ -12,8 +12,6 @@ El mismo componente se puede usar varias veces en una misma página, con distint
 
  **Pages**[Ver Ariadna funcionando](https://daniiela5.github.io/ariadna/)
 
-**Video:**[Ver demo en YouTube]()
-
 ---
 
 ## Instalación
@@ -137,7 +135,7 @@ guiaPagina.iniciar();
 
 ## Video de demostración
 
-**[Ver video ]()**
+**Video:**[Ver demo en YouTube](https://youtu.be/Q6FO5PJW2s0)
 
 ---
 
