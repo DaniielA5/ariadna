@@ -1,0 +1,67 @@
+ body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #e4ecd9;
+      color: #4a3324; 
+    }
+
+    header {
+      background: #5a3e2b;
+       color:#f7f1e5 ;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 4px; }
+    header p { margin: 0 0 14px; }
+
+    main {
+      max-width: 460px;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    .caja {
+      background: #f7f1e5;
+      border: 2px solid #8b5e3c;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .caja h2 { margin-top: 0; }
+    .ayuda { margin: 0 0 8px; }
+
+    label {
+      display: block;
+      margin: 14px 0 4px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #8b5e3c;
+      border-radius: 4px;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    .boton {
+      font: inherit;
+      padding: 8px 16px;
+      background: transparent;
+      border: 2px solid;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .boton--verde { color: #3f6b34; border-color: #3f6b34; }
+    .boton--claro { color: #f7f1e5; border-color: #f7f1e5; }
+    #btnRegistrar { margin-top: 20px; }
+
+    #mensaje { min-height: 1.4em; margin-bottom: 0; }
+
+    footer {
+      background: #2f4a2f;
+      color: #e4ecd9;
+      text-align: center;
+      padding: 16px;
+      font-size: 14px;
+    }
